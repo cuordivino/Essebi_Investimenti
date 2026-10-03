@@ -3,74 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ESSEBI Investimenti SRL</title>
+<title>ESSEBI INVESTIMENTI SRL | Consulenza, Progettazione & Sviluppo Immobiliare</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
-:root{--p:#1a1a2e;--s:#16213e;--a:#c9a227;--l:#f8f9fa;--g:#66707a}
+:root{--pb:#0d47a1;--db:#0a192f;--cb:#1e3a8a;--ar:#d32f2f;--ds:#1e293b;--mg:#6c757d;--lb:#f8f9fa;--w:#fff}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:var(--p)}
-header{position:fixed;top:0;left:0;right:0;z-index:9;background:rgba(26,26,46,.97);display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.2rem}
-.logo{color:#fff;font-weight:800;font-size:1.05rem;letter-spacing:.5px}
-.logo b{color:var(--a)}
-nav{display:none;position:absolute;top:100%;left:0;right:0;background:#0f0f1a;flex-direction:column;padding:1rem 1.4rem;gap:.4rem}
-nav.open{display:flex}
-nav a{color:#fff;text-decoration:none;font-size:1rem;padding:.45rem 0}
-#burger{display:block;background:0;border:0;color:var(--a);font-size:1.7rem;cursor:pointer}
-.hero{padding:7rem 1.2rem 3.5rem;text-align:center;color:#fff;background:linear-gradient(135deg,#0f0f1a,#16213e 55%,#1a3a5c)}
-.hero h1{font-size:clamp(1.7rem,6.5vw,3.2rem);line-height:1.15;margin-bottom:1rem}
-.hero h1 b{color:var(--a)}
-.hero p{color:#ffffffcc;max-width:620px;margin:0 auto 2rem;font-size:clamp(.95rem,2.6vw,1.15rem)}
-.btn{display:inline-block;background:var(--a);border:2px solid var(--a);color:#0f0f1a;font-weight:700;padding:.85rem 1.9rem;border-radius:99px;text-decoration:none;font-size:1rem}
-section{padding:3.4rem 1.2rem}
-.wrap{max-width:1100px;margin:0 auto}
-.t{font-size:clamp(1.45rem,4.6vw,2.2rem);text-align:center;margin-bottom:.5rem}
-.sub{color:var(--g);text-align:center;margin-bottom:2.2rem}
-.badges{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin:1.4rem 0}
-.badges span{background:var(--p);color:var(--a);padding:.5rem 1.1rem;border-radius:99px;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
-.dark{background:#0f0f1a;color:#fff}
-.dark .t{color:#fff}
-.grid{display:grid;gap:1.1rem}
-.card{background:#ffffff0d;border:1px solid #ffffff1a;border-radius:14px;padding:1.6rem 1.3rem}
-.card .n{font-size:2.2rem;font-weight:800;color:var(--a)}
-.card h3{margin:.4rem 0 .6rem;font-size:1.05rem;letter-spacing:1px}
-.card p{font-size:.92rem;color:#ffffffb3}
-.light{background:var(--l)}
-.pcard{border:1px solid #e3e3e3;border-radius:14px;overflow:hidden;background:#fff}
-.pcard .hd{background:linear-gradient(135deg,var(--p),var(--s));padding:1.1rem 1.2rem}
-.st{display:inline-block;background:var(--a);color:#0f0f1a;font-size:.68rem;font-weight:800;padding:.25rem .7rem;border-radius:99px;text-transform:uppercase;margin-bottom:.5rem}
-.pcard .hd h3{color:#fff;font-size:1.15rem}
-.pcard .bd{display:flex;justify-content:space-between;gap:1rem;padding:1rem 1.2rem}
-.lb{font-size:.68rem;color:var(--g);text-transform:uppercase;letter-spacing:1px}
-.vl{font-weight:600;font-size:.95rem}
-form{display:flex;flex-direction:column;gap:.8rem;max-width:480px;margin:0 auto}
-input[type=email]{padding:.9rem 1.2rem;border:0;border-radius:99px;font-size:1rem}
-input[type=checkbox]{accent-color:var(--a);margin-top:3px}
-form label{font-size:.75rem;color:#ffffff99;display:flex;gap:.5rem;text-align:left}
-form .btn{border:0;cursor:pointer;text-align:center}
-.scard{background:#fff;border-left:4px solid var(--a);border-radius:14px;padding:1.5rem 1.3rem;box-shadow:0 3px 14px rgba(0,0,0,.07)}
-.scard h3{font-size:1.05rem;margin-bottom:.5rem}
-.scard p{font-size:.92rem;color:var(--g)}
-.citem{display:flex;gap:.8rem;margin-bottom:1rem;align-items:flex-start}
-.ic{width:38px;height:38px;flex:0 0 38px;border-radius:50%;background:var(--a);display:flex;align-items:center;justify-content:center;font-size:1rem}
-.citem b{display:block}
-.citem a{color:var(--p)}
-.cities{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin:1.6rem 0}
-.cities span{border:2px solid #e3e3e3;background:#fff;border-radius:12px;padding:.7rem 1.4rem;font-weight:600}
-.cities .mn{background:var(--p);color:var(--a);border-color:var(--p)}
-footer{background:#0f0f1a;color:#ffffffb3;text-align:center;padding:2rem 1.2rem;font-size:.85rem}
+body{font-family:'Segoe UI',Arial,sans-serif;color:var(--ds);background:var(--lb);line-height:1.6}
+header{background:var(--w);box-shadow:0 4px 15px rgba(0,0,0,.08);position:sticky;top:0;z-index:1000}
+.nav{max-width:1250px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:15px 25px}
+.logo{font-size:1.4rem;font-weight:800;color:var(--pb)}
+.logo i{color:var(--ar);margin-right:8px}
+#menu{display:flex;gap:22px;list-style:none;align-items:center}
+#menu a{color:var(--ds);text-decoration:none;font-weight:600;font-size:.95rem}
+#menu a:hover{color:var(--pb)}
+#burger{display:none;background:none;border:0;font-size:1.5rem;color:var(--pb);cursor:pointer}
+.hero{background:linear-gradient(135deg,var(--db),var(--cb));color:#fff;text-align:center;padding:110px 20px 80px}
+.hero h1{font-size:clamp(1.8rem,5vw,3.4rem);margin-bottom:18px;line-height:1.2}
+.hero h1 span{color:#ff5252}
+.hero p{max-width:700px;margin:0 auto 30px;color:#cfd8dc;font-size:clamp(1rem,2.2vw,1.25rem)}
+.btn{display:inline-block;background:var(--ar);color:#fff;padding:14px 32px;border-radius:6px;text-decoration:none;font-weight:700;border:0;font-size:1rem;cursor:pointer}
+section{padding:70px 20px}
+.wrap{max-width:1250px;margin:auto}
+h2.sec{font-size:clamp(1.6rem,4vw,2.4rem);color:var(--db);text-align:center;margin-bottom:12px}
+p.sec{text-align:center;color:var(--mg);max-width:700px;margin:0 auto 40px}
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:#fff;border-radius:10px;padding:28px;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.card i.fa{font-size:2rem;color:var(--pb);margin-bottom:14px}
+.card h3{color:var(--db);margin-bottom:10px}
+.card p{color:var(--mg);font-size:.95rem}
+.values{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:20px}
+.values span{background:var(--pb);color:#fff;padding:8px 20px;border-radius:30px;font-weight:700;font-size:.8rem;letter-spacing:1px}
+.num{font-size:2.4rem;font-weight:800;color:var(--ar)}
+.badge{display:inline-block;background:var(--ar);color:#fff;font-size:.7rem;font-weight:800;padding:4px 12px;border-radius:20px;text-transform:uppercase;margin-bottom:10px}
+.pj{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+.pj .top{background:linear-gradient(135deg,var(--pb),var(--cb));color:#fff;padding:20px}
+.pj .row{display:flex;justify-content:space-between;padding:12px 20px;border-bottom:1px solid #eee;font-size:.9rem}
+.pj .row b{color:var(--db)}
+.pj .row span{color:var(--mg);text-transform:uppercase;font-size:.7rem;letter-spacing:1px}
+.news{background:var(--db);color:#fff;text-align:center}
+.news h2{color:#fff}
+.news form{display:flex;flex-direction:column;gap:12px;max-width:480px;margin:auto}
+.news input[type=email]{padding:14px 18px;border:0;border-radius:6px;font-size:1rem}
+.news label{font-size:.75rem;color:#b0bec5;display:flex;gap:8px;text-align:left}
+.news input[type=checkbox]{accent-color:var(--ar)}
+#ok{display:none;color:#8bc34a;font-weight:700;margin-top:12px}
+.dark{background:var(--db)}
+.dark h2.sec{color:#fff}
+.dark p.sec{color:#b0bec5}
+#map{height:320px;border-radius:10px;margin-top:24px}
+.cities{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:26px 0}
+.cities span{background:#fff;border:2px solid var(--pb);color:var(--pb);font-weight:700;padding:10px 22px;border-radius:8px}
+.cities span.hq{background:var(--pb);color:#fff}
+.clist{display:grid;gap:12px;max-width:560px;margin:0 auto 20px}
+.clist div{display:flex;gap:12px;align-items:flex-start;background:#fff;padding:12px 16px;border-radius:8px;box-shadow:0 3px 10px rgba(0,0,0,.05)}
+.clist i{color:var(--ar);width:22px;text-align:center;margin-top:4px}
+.clist a{color:var(--pb)}
+footer{background:var(--db);color:#b0bec5;text-align:center;padding:30px 20px;font-size:.85rem}
 footer b{color:#fff}
-@media(min-width:820px){nav{display:flex;position:static;flex-direction:row;background:0;padding:0;gap:1.6rem}#burger{display:none}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:860px){#burger{display:block}#menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:16px 24px;gap:14px;box-shadow:0 10px 20px rgba(0,0,0,.1)}#menu.open{display:flex}.hero{padding:90px 16px 60px}section{padding:50px 16px}}
 </style>
 </head>
 <body>
-<header><div class="logo">ESSEBI <b>INVESTIMENTI</b></div><nav id="nav" onclick="this.classList.remove('open')"><a href="#chi">Chi Siamo</a><a href="#progetti">Progetti</a><a href="#servizi">Servizi</a><a href="#contatti">Contatti</a></nav><button id="burger" onclick="document.getElementById('nav').classList.toggle('open')">☰</button></header>
-<section class="hero"><h1>Valore ed <b>Eccellenza</b> nel Settore Immobiliare</h1><p>Pianificazione finanziaria, advisory e progettazione su misura per trasformare ogni operazione immobiliare in un investimento solido e redditizio.</p><a class="btn" href="#contatti">Richiedi una Consulenza</a></section>
-<section class="light" id="chi"><div class="wrap"><h2 class="t">ESSEBI INVESTIMENTI SRL</h2><p><b>ESSEBI INVESTIMENTI SRL</b> nasce con l'obiettivo di ridefinire gli standard della consulenza e dello sviluppo immobiliare nel Triveneto. Uniamo una profonda competenza tecnica a un'accurata visione del mercato finanziario ed edilizio.</p><p>La nostra società opera come partner strategico per privati, aziende ed investitori istituzionali. Analizziamo l'intero ciclo di vita dell'operazione: dalla ricerca dell'opportunità alla progettazione architettonica, fino alla riqualificazione finale.</p><p>Grazie a una presenza radicata a Volpago del Montello e a una fitta rete di partnership estesa da Treviso fino alle province di Padova e Vicenza, garantiamo massima sicurezza, redditività e trasparenza.</p><p style="text-align:center;margin-top:1.5rem"><b>Miglioriamo il mondo un immobile alla volta con:</b></p><div class="badges"><span>Passione</span><span>Etica</span><span>Trasparenza</span><span>Ambizione</span></div></div></section>
-<section class="dark"><div class="wrap"><h2 class="t">L'ambiente in cui viviamo determina la qualità della nostra vita</h2><p style="text-align:center;max-width:700px;margin:0 auto 2rem">Essebi Investimenti lavora per il recupero di edifici e la riqualificazione ad alta efficienza energetica, trasformandoli in opportunità di valore per famiglie e investitori. Ogni nostro progetto si contraddistingue per l'elevata attenzione alla qualità architettonica e alla sostenibilità del patrimonio immobiliare.</p><div class="grid g3"><div class="card"><div class="n">01</div><h3>SOSTENIBILITÀ</h3><p>L'impatto energetico di ogni nostro edificio è ridotto al minimo grazie alla qualificazione nelle classi energetiche più elevate.</p></div><div class="card"><div class="n">02</div><h3>ECCELLENZA</h3><p>La scelta dei materiali ricade su prodotti e partner d'eccellenza che condividono la nostra visione di sviluppo sostenibile.</p></div><div class="card"><div class="n">03</div><h3>TRASPARENZA</h3><p>Sappiamo quanto sia fondamentale la fiducia degli investitori: ogni fase dell'operazione è gestita e rendicontata con totale trasparenza.</p></div></div></div></section>
-<section id="progetti"><div class="wrap"><h2 class="t">Non perderti i nostri progetti</h2><p class="sub">Operazioni immobiliari in corso di sviluppo e riqualificazione</p><div class="grid g2"><div class="pcard"><div class="hd"><span class="st">In Corso</span><h3>Villa Ulivi</h3></div><div class="bd"><div><div class="lb">Unità abitative</div><div class="vl">3 ville</div></div><div><div class="lb">Intervento</div><div class="vl">Costruzione</div></div></div></div><div class="pcard"><div class="hd"><span class="st">In Corso</span><h3>Oriani</h3></div><div class="bd"><div><div class="lb">Unità abitative</div><div class="vl">1 unità</div></div><div><div class="lb">Intervento</div><div class="vl">Ristrutturazione</div></div></div></div><div class="pcard"><div class="hd"><span class="st">In Corso</span><h3>Ville in Vigna</h3></div><div class="bd"><div><div class="lb">Unità abitative</div><div class="vl">4 unità</div></div><div><div class="lb">Intervento</div><div class="vl">Costruzione</div></div></div></div><div class="pcard"><div class="hd"><span class="st">In Corso</span><h3>Irta</h3></div><div class="bd"><div><div class="lb">Unità abitative</div><div class="vl">11 unità</div></div><div><div class="lb">Intervento</div><div class="vl">Ricostruzione</div></div></div></div></div></div></section>
-<section class="dark"><div class="wrap"><h2 class="t">Vuoi rimanere sempre aggiornato sulle prossime operazioni?</h2><p class="sub" style="color:#ffffffb3">Lasciaci la tua email</p><form onsubmit="event.preventDefault();alert('Grazie! La tua email è stata registrata con successo.');this.reset()"><input type="email" placeholder="La tua email" required><label><input type="checkbox" required>Acconsento al trattamento dei miei dati in conformità all'Informativa Privacy Policy per l'invio di newsletter.</label><button class="btn">Invia</button></form></div></section>
-<section class="light" id="servizi"><div class="wrap"><h2 class="t">I Nostri Servizi Specialistici</h2><p class="sub">Scorri l'elenco completo delle nostre soluzioni di advisory e progettazione</p><div class="grid g2"><div class="scard"><h3>Sviluppo e Investimenti Immobiliari</h3><p>Individuazione strategica di asset immobiliari ad alto potenziale di rendimento. Gestiamo operazioni di acquisto, valorizzazione e cessione.</p></div><div class="scard"><h3>Progettazione Architettonica & Riqualificazione</h3><p>Studio di fattibilità e sviluppo progettuale per la ristrutturazione ed efficientamento energetico.</p></div><div class="scard"><h3>Consulenza Strategica e Legale-Fiscale</h3><p>Assistenza completa a 360° durante ogni fase della negoziazione. Analizziamo gli aspetti urbanistici, ipotecari e fiscali.</p></div><div class="scard"><h3>Valutazione Patrimoniale & Asset Management</h3><p>Perizie estimative rigorose basate sui reali valori di mercato del territorio.</p></div></div></div></section>
-<section id="contatti"><div class="wrap"><h2 class="t">Contatti e Presenza sul Territorio</h2><h3 style="text-align:center;margin:1.2rem 0">Sede Principale — Essebi Investimenti SRL</h3><div class="citem"><div class="ic">📍</div><div><b>Indirizzo</b>Via San Pio X 6/A, 31040 Volpago del M.llo (TV)</div></div><div class="citem"><div class="ic">📱</div><div><b>Mobile</b><a href="tel:+393489005316">+39 348 900 5316</a></div></div><div class="citem"><div class="ic">✉️</div><div><b>Email</b><a href="mailto:essebiinvestimenti@gmail.com">essebiinvestimenti@gmail.com</a></div></div><div class="citem"><div class="ic">📨</div><div><b>PEC</b>essebi-investimenti@pec.it</div></div><div class="citem"><div class="ic">🏢</div><div><b>P.IVA / SDI</b>05208370261 | KRRH6B9</div></div><a class="btn" style="display:block;text-align:center;max-width:220px;margin:1.2rem auto" href="https://maps.google.com/?q=Via+San+Pio+X+6/A,+Volpago+del+Montello" target="_blank">Apri in Maps</a><div class="cities"><span>PADOVA</span><span>TREVISO</span><span class="mn">Volpago M.</span><span>VICENZA</span></div><p style="text-align:center;max-width:640px;margin:0 auto;color:var(--g)">La nostra struttura garantisce un presidio capillare nelle province di <b>Treviso, Padova e Vicenza</b>. Questo network ci permette di cogliere rapidamente le migliori opportunità immobiliari dell'area veneta.</p></div></section>
-<footer><b>ESSEBI INVESTIMENTI SRL</b><br>Via San Pio X 6/A, 31040 Volpago del M.llo (TV)<br>P.IVA 05208370261 — SDI KRRH6B9<br>© 2026 Tutti i diritti riservati</footer>
+<header><div class="nav"><div class="logo"><i class="fa-solid fa-building"></i>ESSEBI INVESTIMENTI</div><button id="burger" onclick="document.getElementById('menu').classList.toggle('open')"><i class="fa-solid fa-bars"></i></button><ul id="menu" onclick="this.classList.remove('open')"><li><a href="#chi">Chi Siamo</a></li><li><a href="#operazioni">Operazioni</a></li><li><a href="#servizi">Servizi</a></li><li><a href="#contatti">Contatti</a></li></ul></div></header>
+<section class="hero"><h1>Valore ed <span>Eccellenza</span> nel Settore Immobiliare</h1><p>Pianificazione finanziaria, advisory e progettazione su misura per trasformare ogni operazione immobiliare in un investimento solido e redditizio.</p><a class="btn" href="#contatti">Richiedi una Consulenza</a></section>
+<section id="chi"><div class="wrap"><h2 class="sec">ESSEBI INVESTIMENTI SRL</h2><div class="grid"><div class="card"><p><b>ESSEBI INVESTIMENTI SRL</b> nasce con l'obiettivo di ridefinire gli standard della consulenza e dello sviluppo immobiliare nel Triveneto. Uniamo una profonda competenza tecnica a un'accurata visione del mercato finanziario ed edilizio.</p><p style="margin-top:12px">La nostra società opera come partner strategico per privati, aziende ed investitori istituzionali. Analizziamo l'intero ciclo di vita dell'operazione: dalla ricerca dell'opportunità alla progettazione architettonica, fino alla riqualificazione finale.</p><p style="margin-top:12px">Grazie a una presenza radicata a Volpago del Montello e a una fitta rete di partnership estesa da Treviso fino alle province di Padova e Vicenza, garantiamo massima sicurezza, redditività e trasparenza.</p></div><div class="card"><h3>Miglioriamo il mondo un immobile alla volta con:</h3><div class="values"><span>PASSIONE</span><span>ETICA</span><span>TRASPARENZA</span><span>AMBIZIONE</span></div><p style="margin-top:20px"><b>L'ambiente in cui viviamo determina la qualità della nostra vita.</b> Essebi Investimenti lavora per il recupero di edifici e la riqualificazione ad alta efficienza energetica, trasformandoli in opportunità di valore per famiglie e investitori.</p></div></div></div></section>
+<section class="dark" id="operazioni"><div class="wrap"><h2 class="sec">I Nostri Pilastri</h2><p class="sec">Ogni nostro progetto si contraddistingue per l'elevata attenzione alla qualità architettonica e alla sostenibilità del patrimonio immobiliare.</p><div class="grid"><div class="card"><div class="num">01</div><h3>SOSTENIBILITÀ</h3><p>L'impatto energetico di ogni nostro edificio è ridotto al minimo grazie alla qualificazione nelle classi energetiche più elevate.</p></div><div class="card"><div class="num">02</div><h3>ECCELLENZA</h3><p>La scelta dei materiali ricade su prodotti e partner d'eccellenza che condividono la nostra visione di sviluppo sostenibile.</p></div><div class="card"><div class="num">03</div><h3>TRASPARENZA</h3><p>Sappiamo quanto sia fondamentale la fiducia degli investitori: ogni fase dell'operazione è gestita e rendicontata con totale trasparenza.</p></div></div></div></section>
+<section><div class="wrap"><h2 class="sec">Non perderti i nostri progetti</h2><p class="sec">Operazioni immobiliari in corso di sviluppo e riqualificazione</p><div class="grid"><div class="pj"><div class="top"><span class="badge">In Corso</span><h3>Villa Ulivi</h3></div><div class="row"><span>Unità abitative</span><b>3 ville</b></div><div class="row"><span>Intervento</span><b>Costruzione</b></div></div><div class="pj"><div class="top"><span class="badge">In Corso</span><h3>Oriani</h3></div><div class="row"><span>Unità abitative</span><b>1 unità</b></div><div class="row"><span>Intervento</span><b>Ristrutturazione</b></div></div><div class="pj"><div class="top"><span class="badge">In Corso</span><h3>Ville in Vigna</h3></div><div class="row"><span>Unità abitative</span><b>4 unità</b></div><div class="row"><span>Intervento</span><b>Costruzione</b></div></div><div class="pj"><div class="top"><span class="badge">In Corso</span><h3>Irta</h3></div><div class="row"><span>Unità abitative</span><b>11 unità</b></div><div class="row"><span>Intervento</span><b>Ricostruzione</b></div></div></div></div></section>
+<section class="news"><div class="wrap"><h2 class="sec">Vuoi rimanere sempre aggiornato sulle prossime operazioni?</h2><p class="sec" style="color:#b0bec5">Lasciaci la tua email</p><form onsubmit="event.preventDefault();document.getElementById('ok').style.display='block';this.reset()"><input type="email" placeholder="La tua email" required><label><input type="checkbox" required>Acconsento al trattamento dei miei dati in conformità all'Informativa Privacy Policy per l'invio di newsletter.</label><button class="btn">Invia</button></form><p id="ok">Grazie! La tua email è stata registrata con successo.</p></div></section>
+<section id="servizi"><div class="wrap"><h2 class="sec">I Nostri Servizi Specialistici</h2><p class="sec">Scorri l'elenco completo delle nostre soluzioni di advisory e progettazione</p><div class="grid"><div class="card"><i class="fa-solid fa-chart-line fa"></i><h3>Sviluppo e Investimenti Immobiliari</h3><p>Individuazione strategica di asset immobiliari ad alto potenziale di rendimento. Gestiamo operazioni di acquisto, valorizzazione e cessione.</p></div><div class="card"><i class="fa-solid fa-compass-drafting fa"></i><h3>Progettazione Architettonica & Riqualificazione</h3><p>Studio di fattibilità e sviluppo progettuale per la ristrutturazione ed efficientamento energetico.</p></div><div class="card"><i class="fa-solid fa-scale-balanced fa"></i><h3>Consulenza Strategica e Legale-Fiscale</h3><p>Assistenza completa a 360° durante ogni fase della negoziazione. Analizziamo gli aspetti urbanistici, ipotecari e fiscali.</p></div><div class="card"><i class="fa-solid fa-gem fa"></i><h3>Valutazione Patrimoniale & Asset Management</h3><p>Perizie estimative rigorose basate sui reali valori di mercato del territorio.</p></div></div></div></section>
+<section id="contatti"><div class="wrap"><h2 class="sec">Contatti e Presenza sul Territorio</h2><div class="clist"><div><i class="fa-solid fa-location-dot"></i><div><b>Sede Principale — Essebi Investimenti SRL</b><br>Via San Pio X 6/A, 31040 Volpago del M.llo (TV)</div></div><div><i class="fa-solid fa-phone"></i><div><b>Mob:</b> <a href="tel:+393489005316">+39 348 900 5316</a></div></div><div><i class="fa-solid fa-envelope"></i><div><b>Email:</b> <a href="mailto:essebiinvestimenti@gmail.com">essebiinvestimenti@gmail.com</a></div></div><div><i class="fa-solid fa-at"></i><div><b>PEC:</b> essebi-investimenti@pec.it</div></div><div><i class="fa-solid fa-file-invoice"></i><div><b>P.IVA:</b> 05208370261 | <b>SDI:</b> KRRH6B9</div></div></div><div style="text-align:center"><a class="btn" href="https://maps.google.com/?q=Via+San+Pio+X+6/A,+Volpago+del+Montello" target="_blank"><i class="fa-solid fa-map"></i> Apri in Maps</a></div><div id="map"></div><h2 class="sec" style="margin-top:40px">Rete di Realizzazioni e Partnership</h2><div class="cities"><span>PADOVA</span><span>TREVISO</span><span class="hq">Volpago M.</span><span>VICENZA</span></div><p class="sec">La nostra struttura garantisce un presidio capillare nelle province di <b>Treviso, Padova e Vicenza</b>. Questo network ci permette di cogliere rapidamente le migliori opportunità immobiliari dell'area veneta.</p></div></section>
+<footer><b>ESSEBI INVESTIMENTI SRL</b> — Via San Pio X 6/A, 31040 Volpago del M.llo (TV)<br>P.IVA 05208370261 | SDI KRRH6B9<br>© 2026 Tutti i diritti riservati</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var m=L.map('map').setView([45.7567,12.1067],14);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'Dati mappa ©2026 OpenStreetMap'}).addTo(m);
+L.marker([45.7567,12.1067]).addTo(m).bindPopup('ESSEBI INVESTIMENTI SRL<br>Via San Pio X 6/A, Volpago del Montello');
+</script>
 </body>
 </html>

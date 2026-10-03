@@ -15,7 +15,6 @@
             background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
-            padding-top: 0;
         }
         header {
             background: #ffffff;
@@ -31,40 +30,36 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         .logo {
             text-decoration: none;
-            text-align: center;
-            line-height: 1.1;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         .logo span.essebi {
             font-weight: 800;
             color: #1a365d;
-            font-size: 1.2rem;
-            display: inline;
+            font-size: 1.15rem;
             letter-spacing: 0.5px;
-            margin-right: 5px;
         }
         .logo span.investimenti {
             font-weight: 700;
             color: #9b2c2c;
-            font-size: 1.2rem;
-            display: inline;
+            font-size: 1.15rem;
             letter-spacing: 0.5px;
         }
         nav {
             display: flex;
             justify-content: center;
-            gap: 16px;
-            width: 100%;
-            border-top: 1px solid #f1f5f9;
-            padding-top: 8px;
+            gap: 14px;
+            flex-wrap: wrap;
         }
         nav a {
             text-decoration: none;
             color: #4a5568;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 500;
         }
         nav a:hover {
@@ -206,26 +201,24 @@
             font-size: 0.85rem;
         }
 
-        /* Per schermi più grandi (computer) affianchiamo il menu al logo */
+        /* Regole desktop */
         @media (min-width: 768px) {
             .header-container {
                 flex-direction: row;
                 justify-content: space-between;
                 padding: 15px 20px;
             }
-            .logo {
-                text-align: left;
-            }
             .logo span.essebi {
-                display: block;
+                font-size: 1.25rem;
             }
             .logo span.investimenti {
-                display: block;
+                font-size: 1.25rem;
             }
             nav {
-                width: auto;
-                border-top: none;
-                padding-top: 0;
+                gap: 20px;
+            }
+            nav a {
+                font-size: 0.9rem;
             }
         }
     </style>

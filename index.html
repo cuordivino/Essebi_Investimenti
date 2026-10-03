@@ -1,231 +1,71 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESSEBI Investimenti SRL</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #c9a227;
-            --accent-light: #e8c849;
-            --light: #f8f9fa;
-            --dark: #0f0f1a;
-            --gray: #6c757d;
-            --border: #e0e0e0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: var(--primary);
-            overflow-x: hidden;
-        }
-
-        /* === HEADER / NAV === */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: var(--accent);
-        }
-
-        nav {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #fff;
-            border-radius: 3px;
-            transition: 0.3s;
-        }
-
-        /* === HERO === */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 50%, #1a3a5c 100%);
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a227' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            color: #fff;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: var(--accent);
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--accent);
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            border-radius: 50px;
-            transition: all 0.3s;
-            border: 2px solid var(--accent);
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background: transparent;
-            color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.3);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--accent);
-        }
-
-        .btn-outline:hover {
-            background: var(--accent);
-            color: var(--dark);
-        }
-
-        /* === SECTIONS === */
-        section {
-            padding: 5rem 2rem;
-        }
-
-        .section-title {
-            font-size: clamp(1.8rem, 4vw, 2.5rem);
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--gray);
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* === ABOUT === */
-        .about {
-            background: var(--light);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESSEBI Investimenti SRL</title>
+<style>
+:root{--p:#1a1a2e;--s:#16213e;--a:#c9a227;--l:#f8f9fa;--g:#66707a}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,sans-serif;line-height:1.6;color:var(--p)}
+header{position:fixed;top:0;left:0;right:0;z-index:9;background:rgba(26,26,46,.97);display:flex;align-items:center;justify-content:space-between;padding:.9rem 1.2rem}
+.logo{color:#fff;font-weight:800;font-size:1.05rem;letter-spacing:.5px}
+.logo b{color:var(--a)}
+nav{display:none;position:absolute;top:100%;left:0;right:0;background:#0f0f1a;flex-direction:column;padding:1rem 1.4rem;gap:.4rem}
+nav.open{display:flex}
+nav a{color:#fff;text-decoration:none;font-size:1rem;padding:.45rem 0}
+#burger{display:block;background:0;border:0;color:var(--a);font-size:1.7rem;cursor:pointer}
+.hero{padding:7rem 1.2rem 3.5rem;text-align:center;color:#fff;background:linear-gradient(135deg,#0f0f1a,#16213e 55%,#1a3a5c)}
+.hero h1{font-size:clamp(1.7rem,6.5vw,3.2rem);line-height:1.15;margin-bottom:1rem}
+.hero h1 b{color:var(--a)}
+.hero p{color:#ffffffcc;max-width:620px;margin:0 auto 2rem;font-size:clamp(.95rem,2.6vw,1.15rem)}
+.btn{display:inline-block;background:var(--a);border:2px solid var(--a);color:#0f0f1a;font-weight:700;padding:.85rem 1.9rem;border-radius:99px;text-decoration:none;font-size:1rem}
+section{padding:3.4rem 1.2rem}
+.wrap{max-width:1100px;margin:0 auto}
+.t{font-size:clamp(1.45rem,4.6vw,2.2rem);text-align:center;margin-bottom:.5rem}
+.sub{color:var(--g);text-align:center;margin-bottom:2.2rem}
+.badges{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;margin:1.4rem 0}
+.badges span{background:var(--p);color:var(--a);padding:.5rem 1.1rem;border-radius:99px;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.dark{background:#0f0f1a;color:#fff}
+.dark .t{color:#fff}
+.grid{display:grid;gap:1.1rem}
+.card{background:#ffffff0d;border:1px solid #ffffff1a;border-radius:14px;padding:1.6rem 1.3rem}
+.card .n{font-size:2.2rem;font-weight:800;color:var(--a)}
+.card h3{margin:.4rem 0 .6rem;font-size:1.05rem;letter-spacing:1px}
+.card p{font-size:.92rem;color:#ffffffb3}
+.light{background:var(--l)}
+.pcard{border:1px solid #e3e3e3;border-radius:14px;overflow:hidden;background:#fff}
+.pcard .hd{background:linear-gradient(135deg,var(--p),var(--s));padding:1.1rem 1.2rem}
+.st{display:inline-block;background:var(--a);color:#0f0f1a;font-size:.68rem;font-weight:800;padding:.25rem .7rem;border-radius:99px;text-transform:uppercase;margin-bottom:.5rem}
+.pcard .hd h3{color:#fff;font-size:1.15rem}
+.pcard .bd{display:flex;justify-content:space-between;gap:1rem;padding:1rem 1.2rem}
+.lb{font-size:.68rem;color:var(--g);text-transform:uppercase;letter-spacing:1px}
+.vl{font-weight:600;font-size:.95rem}
+form{display:flex;flex-direction:column;gap:.8rem;max-width:480px;margin:0 auto}
+input[type=email]{padding:.9rem 1.2rem;border:0;border-radius:99px;font-size:1rem}
+input[type=checkbox]{accent-color:var(--a);margin-top:3px}
+form label{font-size:.75rem;color:#ffffff99;display:flex;gap:.5rem;text-align:left}
+form .btn{border:0;cursor:pointer;text-align:center}
+.scard{background:#fff;border-left:4px solid var(--a);border-radius:14px;padding:1.5rem 1.3rem;box-shadow:0 3px 14px rgba(0,0,0,.07)}
+.scard h3{font-size:1.05rem;margin-bottom:.5rem}
+.scard p{font-size:.92rem;color:var(--g)}
+.citem{display:flex;gap:.8rem;margin-bottom:1rem;align-items:flex-start}
+.ic{width:38px;height:38px;flex:0 0 38px;border-radius:50%;background:var(--a);display:flex;align-items:center;justify-content:center;font-size:1rem}
+.citem b{display:block}
+.citem a{color:var(--p)}
+.cities{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin:1.6rem 0}
+.cities span{border:2px solid #e3e3e3;background:#fff;border-radius:12px;padding:.7rem 1.4rem;font-weight:600}
+.cities .mn{background:var(--p);color:var(--a);border-color:var(--p)}
+footer{background:#0f0f1a;color:#ffffffb3;text-align:center;padding:2rem 1.2rem;font-size:.85rem}
+footer b{color:#fff}
+@media(min-width:820px){nav{display:flex;position:static;flex-direction:row;background:0;padding:0;gap:1.6rem}#burger{display:none}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="logo">ESSEBI <b>INVESTIMENTI</b></div><nav id="nav" onclick="this.classList.remove('open')"><a href="#chi">Chi Siamo</a><a href="#progetti">Progetti</a><a href="#servizi">Servizi</a><a href="#contatti">Contatti</a></nav><button id="burger" onclick="document.getElementById('nav').classList.toggle('open')">☰</button></header>
+<section class="hero"><h1>Valore ed <b>Eccellenza</b> nel Settore Immobiliare</h1><p>Pianificazione finanziaria, advisory e progettazione su misura per trasformare ogni operazione immobiliare in un investimento solido e redditizio.</p><a class="btn" href="#contatti">Richiedi una Consulenza</a></section>
+<section class="light" id="chi"><div class="wrap"><h2 class="t">ESSEBI INVESTIMENTI SRL</h2><p><b>ESSEBI INVESTIMENTI SRL</b> nasce con l'obiettivo di ridefinire gli standard della consulenza e dello sviluppo immobiliare nel Triveneto. Uniamo una profonda competenza tecnica a un'accurata visione del mercato finanziario ed edilizio.</p><p>La nostra società opera come partner strategico per privati, aziende ed investitori istituzionali. Analizziamo l'intero ciclo di vita dell'operazione: dalla ricerca dell'opportunità alla progettazione architettonica, fino alla riqualificazione finale.</p><p>Grazie a una presenza radicata a Volpago del Montello e a una fitta rete di partnership estesa da Treviso fino alle province di Padova e Vicenza, garantiamo massima sicurezza, redditività e trasparenza.</p><p style="text-align:center;margin-top:1.5rem"><b>Miglioriamo il mondo un immobile alla volta con:</b></p><div class="badges"><span>Passione</span><span>Etica</span><span>Trasparenza</span><span>Ambizione</span></div></div></section>
+<section class="dark"><div class="wrap"><h2 class="t">L'ambiente in cui viviamo determina la qualità della nostra vita</h2><p style="text-align:center;max-width:700px;margin:0 auto 2rem">Essebi Investimenti lavora per il recupero di edifici e la riqualificazione ad alta efficienza energetica, trasformandoli in opportunità di valore per famiglie e investitori. Ogni nostro progetto si contraddistingue per l'elevata attenzione alla qualità architettonica e alla sostenibilità del patrimonio immobiliare.</p><div class="grid g3"><div class="card"><div class="n">01</div><h3>SOSTENIBILITÀ</h3><p>L'impatto energetico di ogni nostro edificio è ridotto al minimo grazie alla qualificazione nelle classi energetiche più elevate.</p></div><div class="card"><div class="n">02</div><h3>ECCELLENZA</h3><p>La scelta dei materiali ricade su prodotti e partner d'eccellenza che condividono la nostra visione di sviluppo sostenibile.</p></div><div class="card"><div class="n">03</div><h3>TRASPARENZA</h3><p>Sappiamo quanto sia fondamentale la fiducia degli investitori: ogni fase dell'operazione è gestita e rendicontata con totale trasparenza.</p></div></div></div></section>
+<section id="progetti"><div class="wrap"><h2 class="t">Non perderti i nostri progetti</h2><p class="sub">Operazioni immobiliari in corso di sviluppo e riqualificazione</p><div class="grid g2"><div class="pcard"><div class="hd"><span class="st">In Corso</span><h3>Villa Ulivi</h3></div><div class="bd"><div><div class="lb">Unità abitative</div><div class="vl">3 ville</div></div><div><div class="lb">Intervento</div><div class="vl">Costruzione</div></div></div></div><div class="pcard"><div class="hd"><span class="st">In Corso</span><h3>Oriani</h3></div><div class="bd"><div><div class="lb">Unità abitative</div><div class="vl">1 unità</div></div><div><div class="lb">Intervento</div><div class="vl">Ristrutturazione</div></div></div></div><div class="pcard"><div class="hd"><span class="st">In Corso</span><h3>Ville in Vigna</h3></div><div class="bd"><div><div class="lb">Unità abitative</div><div class="vl">4 unità</div></div><div><div class="lb">Intervento</div><div class="vl">Costruzione</div></div></div></div><div class="pcard"><div class="hd"><span class="st">In Corso</span><h3>Irta</h3></div><div class="bd"><div><div class="lb">Unità abitative</div><div class="vl">11 unità</div></div><div><div class="lb">Intervento</div><div class="vl">Ricostruzione</div></div></div></div></div></div></section>
+    

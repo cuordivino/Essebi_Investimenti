@@ -69,153 +69,120 @@
             margin: 0 auto;
             padding: 16px;
         }
-        .hero-card {
+        .hero {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80') center/cover;
-            border-radius: 12px;
             color: white;
-            padding: 24px 16px;
-            margin-bottom: 20px;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 24px;
         }
-        .hero-card h2 {
-            font-size: 1.4rem;
-            margin-bottom: 8px;
-        }
-        .hero-card p {
-            font-size: 0.85rem;
-            opacity: 0.9;
+        .hero h1 {
+            font-size: 1.8rem;
             margin-bottom: 12px;
         }
-        .btn-primary {
+        .hero p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        .btn {
             display: inline-block;
-            background: #9b2c2c;
+            background-color: #9b2c2c;
             color: white;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 0.8rem;
             font-weight: 600;
+            font-size: 0.9rem;
         }
-        .about-section {
+        .section {
             background: white;
-            padding: 20px 16px;
+            padding: 24px 20px;
             border-radius: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
             border: 1px solid #e2e8f0;
         }
-        .about-section h2 {
+        .section h2 {
             color: #1a365d;
-            text-align: center;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        .about-section .divider {
-            width: 35px;
-            height: 3px;
-            background: #9b2c2c;
-            margin: 0 auto 15px auto;
-        }
-        .about-section p {
-            color: #475569;
-            font-size: 0.85rem;
+            font-size: 1.4rem;
             margin-bottom: 12px;
-            text-align: justify;
+        }
+        .section p {
+            color: #4a5568;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        .properties-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
         }
         .property-card {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80') center/cover;
-            border-radius: 12px;
-            color: white;
-            padding: 24px 16px;
-            margin-bottom: 20px;
-        }
-        .property-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 6px;
-        }
-        .property-card p {
-            font-size: 0.85rem;
-            opacity: 0.9;
-        }
-        .newsletter-box {
-            background: #0f172a;
-            color: white;
-            padding: 20px 16px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-        .newsletter-box h2 {
-            font-size: 1.05rem;
-            margin-bottom: 6px;
-        }
-        .newsletter-box p {
-            font-size: 0.85rem;
-            color: #94a3b8;
-        }
-        .success-msg {
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid #10b981;
-            color: #34d399;
-            padding: 8px 12px;
-            border-radius: 8px;
-            margin-top: 12px;
-            font-size: 0.8rem;
-        }
-        .services-section {
-            margin-top: 20px;
-        }
-        .services-section h2 {
-            color: #1a365d;
-            text-align: center;
-            margin-bottom: 6px;
-            font-size: 1.3rem;
-        }
-        .services-subtitle {
-            text-align: center;
-            color: #64748b;
-            margin-bottom: 20px;
-            font-size: 0.85rem;
-        }
-        .service-card {
             background: white;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-            margin-bottom: 16px;
             border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
-        .service-card img {
+        .property-card img {
             width: 100%;
-            height: 160px;
+            height: 200px;
             object-fit: cover;
         }
-        .service-content {
-            padding: 16px;
+        .property-content {
+            padding: 20px;
         }
-        .service-content h3 {
+        .property-content h3 {
             color: #1a365d;
-            margin-bottom: 6px;
-            font-size: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
         }
-        .service-content p {
-            color: #475569;
+        .property-content p {
+            color: #4a5568;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        footer {
+            background: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 24px 16px;
             font-size: 0.85rem;
+            margin-top: 40px;
         }
 
-        /* Desktop */
         @media (min-width: 768px) {
             .header-container {
-                padding: 15px 20px;
+                padding: 15px 24px;
             }
             .logo span.essebi {
                 font-size: 1.25rem;
             }
             .logo span.investimenti {
-                font-size: 1.05rem;
+                font-size: 1rem;
             }
             nav {
-                gap: 20px;
+                gap: 24px;
             }
             nav a {
-                font-size: 0.9rem;
+                font-size: 0.95rem;
+            }
+            .properties-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -229,60 +196,70 @@
                 <span class="investimenti">INVESTIMENTI</span>
             </a>
             <nav>
-                <a href="#">Home &or;</a>
-                <a href="#">Manifesto &or;</a>
-                <a href="#">Servizi &or;</a>
-                <a href="#">Contatti &or;</a>
+                <a href="#home">Home</a>
+                <a href="#manifesto">Manifesto</a>
+                <a href="#servizi">Servizi</a>
+                <a href="#contatti">Contatti</a>
             </nav>
         </div>
     </header>
 
     <div class="container">
-        <!-- Hero Principale -->
-        <div class="hero-card">
-            <h2>Valore ed Eccellenza nel Settore Immobiliare</h2>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <h1>Valore ed Eccellenza nel Settore Immobiliare</h1>
             <p>Pianificazione finanziaria, advisory e progettazione su misura per trasformare ogni operazione immobiliare in un investimento solido e redditizio.</p>
-            <a href="#" class="btn-primary">Richiedi una Consulenza</a>
-        </div>
+            <a href="#contatti" class="btn">Richiedi una Consulenza</a>
+        </section>
 
-        <!-- Sezione Chi Siamo / Presentazione -->
-        <div class="about-section">
-            <h2>ESSEBI INVESTIMENTI<br>SRL</h2>
-            <div class="divider"></div>
-            <p><strong>ESSEBI INVESTIMENTI SRL</strong> nasce con l'obiettivo di ridefinire gli standard della consulenza e dello sviluppo immobiliare nel Triveneto. Uniamo una profonda competenza tecnica a un'accurata visione del mercato finanziario ed edilizio.</p>
+        <!-- Chi Siamo / Manifesto -->
+        <section id="manifesto" class="section">
+            <h2>Essebi Investimenti Srl</h2>
+            <p>ESSEBI INVESTIMENTI SRL nasce con l'obiettivo di ridefinire gli standard della consulenza e dello sviluppo immobiliare nel Triveneto. Uniamo una profonda competenza tecnica a un'accurata visione del mercato finanziario ed edilizio.</p>
             <p>La nostra società opera come partner strategico per privati, aziende ed investitori istituzionali. Analizziamo l'intero ciclo di vita dell'operazione: dalla ricerca dell'opportunità alla progettazione architettonica, fino alla riqualificazione finale.</p>
             <p>Grazie a una presenza radicata a Volpago del Montello e a una fitta rete di partnership estesa da Treviso fino alle province di Padova e Vicenza, garantiamo massima sicurezza, redditività e trasparenza.</p>
-        </div>
-
-        <!-- Operazione Irta -->
-        <div class="property-card">
-            <h2>Irta</h2>
-            <p>UNITÀ ABITATIVE: 11 unità &bull; INTERVENTO: Ricostruzione</p>
-        </div>
-
-        <!-- Newsletter -->
-        <div class="newsletter-box">
-            <h2>Vuoi rimanere sempre aggiornato sulle prossime operazioni?</h2>
-            <p>Lasciaci la tua email</p>
-            <div class="success-msg">
-                &check; Grazie! La tua email è stata registrata con successo.
-            </div>
-        </div>
+        </section>
 
         <!-- Servizi -->
-        <div class="services-section">
-            <h2>I Nostri Servizi Specialistici</h2>
-            <p class="services-subtitle">Scorri l'elenco completo delle nostre soluzioni di advisory e progettazione.</p>
-            
-            <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Investimenti Immobiliari">
-                <div class="service-content">
-                    <h3>Sviluppo e Investimenti Immobiliari</h3>
-                    <p>Individuazione strategica di asset immobiliari ad alto potenziale di rendimento. Gestiamo operazioni di acquisto, valorizzazione e cessione.</p>
+        <section id="servizi" class="section">
+            <h2>I Nostri Servizi</h2>
+            <p>Offriamo soluzioni integrate per lo sviluppo immobiliare, la gestione degli investimenti e la consulenza finanziaria e tecnica avanzata.</p>
+        </section>
+
+        <!-- Operazioni / Immobili -->
+        <div class="properties-grid">
+            <div class="property-card">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Immobile">
+                <div class="property-content">
+                    <h3>Operazione Irta</h3>
+                    <p>Unità abitative di pregio con interventi di ricostruzione e valorizzazione energetica avanzata.</p>
+                </div>
+            </div>
+            <div class="property-card">
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80" alt="Consulenza">
+                <div class="property-content">
+                    <h3>Advisory & Finanza</h3>
+                    <p>Analisi di fattibilità, strutturazione finanziaria e gestione strategica degli asset immobiliari.</p>
                 </div>
             </div>
         </div>
+
+        <!-- Contatti -->
+        <section id="contatti" class="section">
+            <h2>Contattaci</h2>
+            <p>Mettiti in contatto con noi per valutare le tue opportunità di investimento.</p>
+            <form class="contact-form">
+                <input type="text" placeholder="Il tuo nome" required>
+                <input type="email" placeholder="La tua email" required>
+                <textarea rows="4" placeholder="Il tuo messaggio" required></textarea>
+                <button type="submit" class="btn">Invia Messaggio</button>
+            </form>
+        </section>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Essebi Investimenti Srl. Tutti i diritti riservati.</p>
+    </footer>
 
 </body>
 </html>

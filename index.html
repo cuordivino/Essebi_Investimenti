@@ -15,6 +15,7 @@
             background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
+            padding-top: 0;
         }
         header {
             background: #ffffff;
@@ -26,41 +27,44 @@
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 15px 20px;
+            padding: 12px 16px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
         }
         .logo {
             text-decoration: none;
-            line-height: 1.2;
+            text-align: center;
+            line-height: 1.1;
         }
         .logo span.essebi {
             font-weight: 800;
             color: #1a365d;
-            font-size: 1.1rem;
-            display: block;
+            font-size: 1.2rem;
+            display: inline;
             letter-spacing: 0.5px;
+            margin-right: 5px;
         }
         .logo span.investimenti {
             font-weight: 700;
             color: #9b2c2c;
-            font-size: 0.95rem;
-            display: block;
+            font-size: 1.2rem;
+            display: inline;
             letter-spacing: 0.5px;
         }
         nav {
             display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            width: 100%;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 8px;
         }
         nav a {
             text-decoration: none;
             color: #4a5568;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
         }
         nav a:hover {
@@ -69,137 +73,160 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 16px;
         }
         .hero-card {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80') center/cover;
             border-radius: 12px;
             color: white;
-            padding: 30px 20px;
-            margin-bottom: 25px;
+            padding: 24px 16px;
+            margin-bottom: 20px;
         }
         .hero-card h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
         }
         .hero-card p {
             font-size: 0.85rem;
             opacity: 0.9;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .btn-primary {
             display: inline-block;
             background: #9b2c2c;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
         }
         .about-section {
             background: white;
-            padding: 25px 20px;
+            padding: 20px 16px;
             border-radius: 12px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border: 1px solid #e2e8f0;
         }
         .about-section h2 {
             color: #1a365d;
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 5px;
         }
         .about-section .divider {
-            width: 40px;
+            width: 35px;
             height: 3px;
             background: #9b2c2c;
-            margin: 0 auto 20px auto;
+            margin: 0 auto 15px auto;
         }
         .about-section p {
             color: #475569;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
             text-align: justify;
         }
         .property-card {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80') center/cover;
             border-radius: 12px;
             color: white;
-            padding: 30px 20px;
-            margin-bottom: 25px;
+            padding: 24px 16px;
+            margin-bottom: 20px;
         }
         .property-card h2 {
-            font-size: 1.8rem;
-            margin-bottom: 8px;
+            font-size: 1.5rem;
+            margin-bottom: 6px;
         }
         .property-card p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.9;
         }
         .newsletter-box {
             background: #0f172a;
             color: white;
-            padding: 25px 20px;
+            padding: 20px 16px;
             border-radius: 12px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         .newsletter-box h2 {
-            font-size: 1.15rem;
-            margin-bottom: 8px;
+            font-size: 1.05rem;
+            margin-bottom: 6px;
         }
         .newsletter-box p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #94a3b8;
         }
         .success-msg {
             background: rgba(16, 185, 129, 0.15);
             border: 1px solid #10b981;
             color: #34d399;
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 8px;
-            margin-top: 15px;
-            font-size: 0.85rem;
+            margin-top: 12px;
+            font-size: 0.8rem;
         }
         .services-section {
-            margin-top: 30px;
+            margin-top: 20px;
         }
         .services-section h2 {
             color: #1a365d;
             text-align: center;
-            margin-bottom: 8px;
-            font-size: 1.5rem;
+            margin-bottom: 6px;
+            font-size: 1.3rem;
         }
         .services-subtitle {
             text-align: center;
             color: #64748b;
-            margin-bottom: 25px;
-            font-size: 0.9rem;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
         }
         .service-card {
             background: white;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             border: 1px solid #e2e8f0;
         }
         .service-card img {
             width: 100%;
-            height: 180px;
+            height: 160px;
             object-fit: cover;
         }
         .service-content {
-            padding: 20px;
+            padding: 16px;
         }
         .service-content h3 {
             color: #1a365d;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
+            margin-bottom: 6px;
+            font-size: 1rem;
         }
         .service-content p {
             color: #475569;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+        }
+
+        /* Per schermi più grandi (computer) affianchiamo il menu al logo */
+        @media (min-width: 768px) {
+            .header-container {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 15px 20px;
+            }
+            .logo {
+                text-align: left;
+            }
+            .logo span.essebi {
+                display: block;
+            }
+            .logo span.investimenti {
+                display: block;
+            }
+            nav {
+                width: auto;
+                border-top: none;
+                padding-top: 0;
+            }
         }
     </style>
 </head>
